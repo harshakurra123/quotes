@@ -12,3 +12,7 @@ It is a fact, images and video clips get shared more often (and sometime without
 - Navigate to directory where manage.py file exists.
 - Execute command <pre>python manage.py runserver</pre> to run the server.
 - Open the browser and navigate to the ip address.
+
+## Testing
+- Test cases are written in tests.py file.
+- Unit tests for every API can be written.
