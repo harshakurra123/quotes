@@ -6,3 +6,9 @@ It is a fact, images and video clips get shared more often (and sometime without
 - Python need to be installed.
 - Django Framework.
 - Postgresql database.
+
+## Setup
+- Clone the project into local machine.
+- Navigate to directory where manage.py file exists.
+- Execute command python manage.py runserver to run the server.
+- Open the browser and navigate to the ip address.
