@@ -16,3 +16,9 @@ It is a fact, images and video clips get shared more often (and sometime without
 ## Testing
 - Test cases are written in tests.py file.
 - Unit tests for every API can be written.
+
+## Authors
+- Harshavardhan Kurra
+- Hemanth Venkata Reddy Telluri
+- Manoj Nuvvala
+- Sai Kiran Reddy Enugala
