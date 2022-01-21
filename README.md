@@ -24,3 +24,5 @@ It is a fact, images and video clips get shared more often (and sometime without
 - Sai Kiran Reddy Enugala
 
 ### [Link to WIKI](https://github.com/harshakurra123/quotes/wiki)
+
+### [Link to Project Board](https://github.com/harshakurra123/quotes/projects/1)
