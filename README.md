@@ -22,3 +22,5 @@ It is a fact, images and video clips get shared more often (and sometime without
 - Hemanth Venkata Reddy Telluri
 - Manoj Nuvvala
 - Sai Kiran Reddy Enugala
+
+### [Link to WIKI](https://github.com/harshakurra123/quotes/wiki)
