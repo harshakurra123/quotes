@@ -5,3 +5,5 @@ sqlparse==0.4.2
 typing-extensions==4.0.1
 postgres==4.0
 psycopg2==2.7.7
+psycopg2-binary==2.9.1
+psycopg2-pool==1.1
