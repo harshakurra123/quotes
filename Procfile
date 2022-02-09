@@ -1,1 +1,1 @@
-web: gunicorn smilemaker.wsgi --log-file=-
+web: gunicorn quotes.wsgi --log-file=-
