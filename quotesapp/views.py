@@ -14,3 +14,12 @@ def reverse(request):
     return redirect('')
 
 
+
+def index(request):
+    quote_categories = QuoteCategory.objects.all()
+    context = QuoteCategorySerializer(quote_categories, many=True).data
+    final_result = {}
+    final_result["data"] = context
+    print(final_result)
+    return render(request, 'index.html', final_result)
+
