@@ -15,6 +15,36 @@
 <body>
 
 
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Jokes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">about</a>
+                </li>
+
+            </ul>
+        </div>
+        {% for i in data %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" style="justify-content: center;">
+            <div class="col mb-4">
+                <div class="card">
+                    <!-- <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="..."> -->
+                    <div class="card-body">
+                        <h5 class="card-title">{{ i.category_name }}</h5>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
 
 </body>
 <!-- Footer -->
