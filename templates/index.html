@@ -27,9 +27,15 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">About</a>
                 </li>
-
+                <li class="nav-item">
+                        {% if user.username %}
+                            <h6>Welcome {{ user.username }}</h6>
+                            <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
+                        {% endif %}
+                </li>
             </ul>
         </div>
+
         {% for i in data %}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" style="justify-content: center;">
             <div class="col mb-4">

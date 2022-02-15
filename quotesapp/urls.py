@@ -22,6 +22,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('', views.index, name='index'),
     path('', include('social_django.urls')),
+    path('logout', views.logout),
     path('reverse/', views.reverse, name='reverse'),
     path('quotecategory/', views.QuoteCategoryAPI.as_view()),
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
