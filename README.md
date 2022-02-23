@@ -1,5 +1,7 @@
 ## Quotes
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5e3b71e337cd4db4a3915e33d2fea6f4)](https://app.codacy.com/gh/harshakurra123/quotes?utm_source=github.com&utm_medium=referral&utm_content=harshakurra123/quotes&utm_campaign=Badge_Grade_Settings)
+
 It is a fact, images and video clips get shared more often (and sometime without much hesitation) on social media platforms, be it Twitter, Facebook, Google+ or Pinterest. Quotes are also wildly used in these social medias.
 
 ## External Requirements
