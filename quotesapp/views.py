@@ -20,7 +20,6 @@ def reverse(request):
 
 
 def index(request):
-    print('jkgdjhfg')
     user = request.user
     # if user.is_authenticated:
     quote_categories = QuoteCategory.objects.all()
@@ -29,7 +28,11 @@ def index(request):
     final_result["data"] = context
     return render(request, 'home.html', final_result)
     # else:
-    #     return render(request, 'index.html')
+    # return render(request, 'index.html')
+
+
+def about(request):
+    return render(request, 'about.html')
 
 
 class QuoteCategoryAPI(APIView):
