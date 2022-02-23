@@ -21,6 +21,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
     path('', include('social_django.urls')),
     path('logout', views.logout),
     path('reverse/', views.reverse, name='reverse'),
