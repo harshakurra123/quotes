@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5MW9CY4QWJ"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-5MW9CY4QWJ');
+</script>
 
 <head>
     <title>7A</title>
@@ -22,14 +34,19 @@
                     <a class="nav-link active" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Jokes</a>
+                    <a class="nav-link" href="#">Quotes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">about</a>
+                    <a class="nav-link disabled" href="#">About</a>
                 </li>
-
+                <li class="nav-item">
+                    {% if user.username %}
+                    <h6>Welcome {{ user.username }}</h6>
+                    <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a> {% endif %}
+                </li>
             </ul>
         </div>
+
         {% for i in data %}
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" style="justify-content: center;">
             <div class="col mb-4">
@@ -45,7 +62,12 @@
 
         {% endfor %}
     </div>
-
+    <div class="login-box auth0-box before">
+        <img src="https://i.cloudup.com/StzWWrY34s.png" />
+        <h3>Auth0 Example</h3>
+        <p>Zero friction identity infrastructure, built for developers</p>
+        <a class="btn btn-primary btn-lg btn-login btn-block" href="/login/auth0">Log In</a>
+    </div>
 </body>
 <!-- Footer -->
 <footer class="page-footer font-small indigo">
@@ -62,6 +84,11 @@
                 <!-- Links -->
                 <h5 class="font-weight-bold text-uppercase mt-3 mb-4">ABOUT US</h5>
 
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="https://github.com/harshakurra123/quotes/wiki/Group-Organization" target="_blank">TEAM</a>
+                    </li>
+                </ul>
 
 
             </div>
@@ -77,16 +104,19 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://github.com/harshakurra123/Smile-Maker">GitHub</a>
+                        <a href="https://github.com/harshakurra123/Smile-Maker" target="_blank">GitHub</a>
                     </li>
                     <li>
-                        <a href="https://github.com/harshakurra123/Smile-Maker/blob/main/Proposal.md">Proposal</a>
+                        <a href="https://github.com/harshakurra123/Smile-Maker/blob/main/Proposal.md" target="_blank">Proposal</a>
                     </li>
                     <li>
-                        <a href="https://github.com/harshakurra123/Smile-Maker/projects/1">Work Plan</a>
+                        <a href="https://github.com/harshakurra123/Smile-Maker/projects/1" target="_blank">Work Plan</a>
                     </li>
                     <li>
-                        <a href="#!">Proposal Number - 7A</a>
+                        <a href="https://github.com/harshakurra123/quotes/blob/main/rfp.md" target="_blank">Proposal Number - 7A</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/harshakurra123/quotes/wiki" target="_blank">Wiki Page</a>
                     </li>
                 </ul>
 
