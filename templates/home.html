@@ -85,17 +85,18 @@
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="about/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>
+            <a href="swagger/" class="w3-bar-item w3-button"><i class="fa fa-book"></i>SWAGGER</a>
+            <a href="about/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-id-card"></i> ABOUT</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-copyright"></i> CONTACT</a>
             
             
             
             {% if user.username %}
-            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/logout">Logout</a>
+            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/logout"><i class="fa fa-user-secret"></i>Logout</a>
             <h6 style="float: right;">Welcome {{ user.username }}</h6>
             {% else %}
-            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/login/auth0">Log In</a>
+            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/login/auth0"><i class="fa fa-user-secret"></i>Log In</a>
             {% endif %}
             </a>
         </div>
@@ -132,7 +133,7 @@
         <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
         <div class="w3-xlarge w3-section">
             <i class="fa fa-github w3-hover-opacity"><a href="https://github.com/harshakurra123/quotes">GitHub</a></i>
-            <i class="fa fa-github w3-hover-opacity"><a href="https://github.com/harshakurra123/quotes/wiki">Wiki</i>
+            <i class="fa fa-wikipedia-w"><a href="https://github.com/harshakurra123/quotes/wiki">Wiki</i>
         </div>
 
     </footer>
