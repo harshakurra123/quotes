@@ -18,6 +18,9 @@ def reverse(request):
     return redirect('')
 
 
+def coverage_repo(request):
+    return render(request, 'report.html')
+
 
 def index(request):
     user = request.user
