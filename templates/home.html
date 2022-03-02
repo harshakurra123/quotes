@@ -75,6 +75,36 @@
         clear: both;
         display: table;
     }
+    body {
+  font-size: 100%;
+  font-family: 'Lora', serif;
+  background: #333333;
+}
+
+blockquote {
+  margin: 3.7em auto;
+  padding: 2em;
+  background: linear-gradient(white, white) padding-box, url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/80625/sea.jpg) border-box  0 / cover;
+  border: 2em solid transparent;
+  box-shadow: 5px 3px 30px black;
+  font-size: 1.4em;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  line-height: 1.5;
+  width: 40%;
+}
+
+footer {
+  padding-top: 1.3em;
+}
+
+cite {
+  font-style: normal;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lora);
 </style>
 
 <body>
@@ -110,11 +140,13 @@
     </div>
 
     <!-- First Parallax Image with Logo Text -->
-    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">100 Quotes</span>
-        </div>
-    </div>
+    <blockquote>{{ quote_description }}
+        <footer>&mdash;
+          <cite>
+            {{ quote_title }}
+          </cite>
+        </footer>
+      </blockquote>
 
 
     <div class="row">
