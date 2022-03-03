@@ -47,6 +47,20 @@ def about(request):
     return render(request, 'about.html')
 
 
+def listpage(request):
+    quotes = Quotes.objects.filter(quote_category__category_name=request.GET.get("categoryname"))
+    final_result = []
+    for i in quotes:
+        final_result_dict = {}
+        final_result_dict["title"] = i.quote_title
+        final_result_dict["description"] = i.quote_description
+        final_result.append(final_result_dict)
+    result = {}
+    result["data"] = final_result
+    print(result)
+    return render(request, 'list.html', result)
+
+
 class QuoteCategoryAPI(APIView):
     """
     QuoteCategoryAPI.
