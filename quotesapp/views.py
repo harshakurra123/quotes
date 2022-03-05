@@ -61,6 +61,18 @@ def listpage(request):
     return render(request, 'list.html', result)
 
 
+def viewquotes(request):
+    quotes = Quotes.objects.all()
+    final_result = []
+    for i in quotes:
+        final_result_dict = {}
+        final_result_dict["title"] = i.quote_title
+        final_result_dict["description"] = i.quote_description
+        final_result.append(final_result_dict)
+    result = {}
+    result["data"] = final_result
+    return render(request, 'viewquotes.html', result)
+
 class QuoteCategoryAPI(APIView):
     """
     QuoteCategoryAPI.
@@ -123,3 +135,25 @@ def logout(request):
     logout_url = 'https://%s/v2/logout?client_id=%s&%s' % \
                  (settings.SOCIAL_AUTH_AUTH0_DOMAIN, settings.SOCIAL_AUTH_AUTH0_KEY, return_to)
     return HttpResponseRedirect(logout_url)
+
+
+from django.views.decorators.csrf import csrf_exempt
+@csrf_exempt
+def get_name(request):
+    if request.method == 'POST':
+        title = request.POST.get("title")
+        description = request.POST.get("description")
+        category = request.POST.get("category")
+        quote_cat = QuoteCategory.objects.get(category_name=category)
+        quote_instance = Quotes()
+        quote_instance.quote_title = title
+        quote_instance.quote_description = description
+        quote_instance.quote_category = quote_cat
+        quote_instance.save()
+
+        return HttpResponseRedirect('/viewquotes/')
+
+    # if a GET (or any other method) we'll create a blank form
+    
+
+    return render(request, 'addquote.html')
