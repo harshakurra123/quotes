@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<title>100 Quotes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    @import "compass/css3";
+
+html {
+  background: #eff0ef;
+}
+
+h1 {
+  font-size: 16px; 
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial-quote {
+    font-size: 16px;
+}
+
+.testimonial-quote blockquote {
+    /* Negate theme styles */
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    color: gray;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    font-style: italic;
+    line-height: 1.4 !important;
+    margin: 0;
+    position: relative;
+    text-shadow: 0 1px white;
+    z-index: 600;
+}
+
+.testimonial-quote blockquote * {
+    box-sizing: border-box; 
+}
+
+.testimonial-quote blockquote p {
+    color: #75808a; 
+    line-height: 1.4 !important;
+}
+
+.testimonial-quote blockquote p:first-child:before {
+    content: '\201C';
+    color: #81bedb;
+    font-size: 7.5em;
+    font-weight: 700;
+    opacity: .3;
+    position: absolute;
+    top: -.4em;
+    left: -.2em;    
+    text-shadow: none;
+    z-index: -300;
+}
+
+.testimonial-quote img {
+    border: 3px solid #9CC1D3;
+    border-radius: 50%;
+    display: block;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: -.2em; 
+    left: 0;    
+}
+
+.testimonial-quote cite {
+    color: gray;
+    display: block;
+    font-size: .8em; 
+}
+  
+.testimonial-quote cite span {
+    color: #5e5e5e;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 1px white; 
+}
+
+.testimonial-quote {
+    position: relative; 
+}
+
+.testimonial-quote .quote-container {
+    padding-left: 160px; 
+}
+  
+.testimonial-quote.right .quote-container {
+    padding-left: 0;
+    padding-right: 160px; 
+}
+
+.testimonial-quote.right img {
+    left: auto;
+    right: 0;
+}
+
+.testimonial-quote.right cite {
+    text-align: right; 
+}
+
+</style>
+
+<body>
+     <!-- Navbar (sit on top) -->
+     <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="/" class="w3-bar-item w3-button"><i class="fa fa-home"></i>HOME</a>
+            
+            {% if user.username %}
+            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/logout"><i class="fa fa-user-secret"></i>Logout</a>
+            <h6 style="float: right;">Welcome {{ user.username }}</h6>
+            {% else %}
+            <a class="w3-bar-item w3-button w3-hide-small" style="float: right;" href="/login/auth0"><i class="fa fa-user-secret"></i>Register / Log In</a>
+            {% endif %}
+            </a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+            
+        </div>
+    </div>
+    {% for i in data %}
+
+    <div style="width: 960px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px;"> 
+
+        <div class="testimonial-quote group">
+            <div class="quote-container">
+                <blockquote>
+                    <p>"{{ i.description }}" - {{ i.title }}</p>
+                </blockquote>  
+                
+            </div>
+        </div>    
+    {% endfor %}
+       
+    </div>
+</body>
+
+</html>
