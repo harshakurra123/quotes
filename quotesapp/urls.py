@@ -24,6 +24,8 @@ urlpatterns = [
     path('report/', views.coverage_repo, name='report'),
     path('about/', views.about, name='about'),
     path('listpage/', views.listpage, name='listpage'),
+    path('viewquotes/', views.viewquotes, name='viewquotes'),
+    path('addquote/', views.get_name, name='addquote'),
     path('', include('social_django.urls')),
     path('logout', views.logout),
     path('reverse/', views.reverse, name='reverse'),
