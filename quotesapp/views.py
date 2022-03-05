@@ -1,11 +1,16 @@
 from django.shortcuts import render, redirect
-from quotesapp.models import QuoteCategory
+from quotesapp.models import QuoteCategory, Quotes
 from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
 # Create your views here.
+class QuotesSerializer(serializers.Serializer):
+    class Meta:
+        model = Quotes
+        fields = ["quote_description", "quote_title"]
+
 
 class QuoteCategorySerializer(serializers.Serializer):
     category_name = serializers.CharField()
@@ -25,10 +30,14 @@ def coverage_repo(request):
 def index(request):
     user = request.user
     # if user.is_authenticated:
+    quote_random = Quotes.objects.order_by('?').first()
     quote_categories = QuoteCategory.objects.all()
     context = QuoteCategorySerializer(quote_categories, many=True).data
     final_result = {}
     final_result["data"] = context
+    final_result["quote_title"] = quote_random.quote_title
+    final_result["quote_description"] = quote_random.quote_description
+    print(final_result)
     return render(request, 'home.html', final_result)
     # else:
     # return render(request, 'index.html')
@@ -36,6 +45,20 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def listpage(request):
+    quotes = Quotes.objects.filter(quote_category__category_name=request.GET.get("categoryname"))
+    final_result = []
+    for i in quotes:
+        final_result_dict = {}
+        final_result_dict["title"] = i.quote_title
+        final_result_dict["description"] = i.quote_description
+        final_result.append(final_result_dict)
+    result = {}
+    result["data"] = final_result
+    print(result)
+    return render(request, 'list.html', result)
 
 
 class QuoteCategoryAPI(APIView):
