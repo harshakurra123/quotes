@@ -25,6 +25,9 @@ It is a fact, images and video clips get shared more often (and sometime without
 - Manoj Nuvvala
 - Sai Kiran Reddy Enugala
 
+## Screen sketches
+![sketches](images/approval.jpg)
+
 ### [Link to WIKI](https://github.com/harshakurra123/quotes/wiki)
 
 ### [Link to Project Board](https://github.com/harshakurra123/quotes/projects/1)
