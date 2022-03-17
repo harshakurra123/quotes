@@ -33,3 +33,7 @@ It is a fact, images and video clips get shared more often (and sometime without
 ### [Link to Project Board](https://github.com/harshakurra123/quotes/projects/1)
 
 ### [Link to RFP](https://github.com/harshakurra123/quotes/blob/main/rfp.md)
+
+### [Link to Issues](https://github.com/harshakurra123/quotes/issues)
+
+### [Link to Milestones](https://github.com/harshakurra123/quotes/milestones)
