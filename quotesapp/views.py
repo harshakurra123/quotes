@@ -52,6 +52,7 @@ def listpage(request):
     final_result = []
     for i in quotes:
         final_result_dict = {}
+        final_result_dict["id"] = i.id
         final_result_dict["title"] = i.quote_title
         final_result_dict["description"] = i.quote_description
         final_result.append(final_result_dict)
@@ -61,11 +62,21 @@ def listpage(request):
     return render(request, 'list.html', result)
 
 
+def editquote(request):
+    quote = Quotes.objects.get(id=request.GET.get("id"))
+    quote_dict = {}
+    quote_dict["id"] = quote.id
+    quote_dict["title"] = quote.quote_title
+    quote_dict["description"] = quote.quote_description
+    return render(request, 'editquote.html', quote_dict)
+
+
 def viewquotes(request):
     quotes = Quotes.objects.all()
     final_result = []
     for i in quotes:
         final_result_dict = {}
+        final_result_dict["id"] = i.id
         final_result_dict["title"] = i.quote_title
         final_result_dict["description"] = i.quote_description
         final_result.append(final_result_dict)
@@ -145,11 +156,20 @@ def get_name(request):
         description = request.POST.get("description")
         category = request.POST.get("category")
         quote_cat = QuoteCategory.objects.get(category_name=category)
-        quote_instance = Quotes()
-        quote_instance.quote_title = title
-        quote_instance.quote_description = description
-        quote_instance.quote_category = quote_cat
-        quote_instance.save()
+
+        if request.POST.get("id"):
+            quote_instance = Quotes.objects.get(id=request.POST.get("id"))
+            quote_instance.quote_title = title
+            quote_instance.quote_description = description
+            quote_instance.quote_category = quote_cat    
+            quote_instance.save()
+
+        else:
+            quote_instance = Quotes()
+            quote_instance.quote_title = title
+            quote_instance.quote_description = description
+            quote_instance.quote_category = quote_cat
+            quote_instance.save()
 
         return HttpResponseRedirect('/viewquotes/')
 
