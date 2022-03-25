@@ -141,17 +141,20 @@ h1 {
     </div>
     {% for i in data %}
 
-    <div style="width: 960px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px;"> 
+    <div style="width: 960px; margin: 0 auto; padding-top: 80px; padding-bottom: 80px;">
 
         <div class="testimonial-quote group">
             <div class="quote-container">
                 <blockquote>
                     <p>"{{ i.description }}" - {{ i.title }}</p>
-                </blockquote>  
+                    <i class="fa fa-edit"><a href="editquote/?id={{ i.id }}">edit</i>
+                    <i class="fa fa-trash-o"><a href="deletequote/?id={{ i.id }}">delete</i>            
+                </blockquote>
                 
             </div>
-        </div>    
-    {% endfor %}
+        </div>
+        
+        {% endfor %}
        
     </div>
 </body>
