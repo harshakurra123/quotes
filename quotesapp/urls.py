@@ -28,6 +28,8 @@ urlpatterns = [
     path('addquote/', views.get_name, name='addquote'),
     path('viewquotes/editquote/', views.editquote, name='editquote'),
     path('listpage/editquote/', views.editquote, name='editquote'),
+    path('viewquotes/deletequote/', views.deletequote, name='deletequote'),
+    path('listpage/deletequote/', views.deletequote, name='deletequote'),
     path('', include('social_django.urls')),
     path('logout', views.logout),
     path('reverse/', views.reverse, name='reverse'),
