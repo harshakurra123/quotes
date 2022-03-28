@@ -71,6 +71,14 @@ def editquote(request):
     return render(request, 'editquote.html', quote_dict)
 
 
+
+def deletequote(request):
+    quote = Quotes.objects.get(id=request.GET.get("id"))
+    quote.delete()
+    context = {"message":"Are you want to delete the Quote"}
+    return render(request, 'deletequote.html', context)
+
+
 def viewquotes(request):
     quotes = Quotes.objects.all()
     final_result = []
