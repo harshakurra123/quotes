@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\quotes",
+    "\\quotes\\static",
+    "\\quotes\\staticfiles",
+    "\\quotes\\static\\admin",
+    "\\static",
+    "\\templates"
+  ],
+  "SelectedNode": "\\templates\\about.html",
+  "PreviewInSolutionExplorer": false
+}
