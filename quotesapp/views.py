@@ -26,6 +26,8 @@ def reverse(request):
 def coverage_repo(request):
     return render(request, 'report.html')
 
+def docs(request):
+    return render(request, 'https://github.com/harshakurra123/quotes/blob/main/docs/_build/html/modules.html')
 
 def index(request):
     user = request.user
