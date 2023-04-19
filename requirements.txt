@@ -39,7 +39,7 @@ ruamel.yaml.clib==0.2.6
 simplejson==3.17.6
 six==1.16.0
 platformdirs==2.4.0
-sqlparse==0.4.2
+sqlparse==0.4.4
 swagger-spec-validator==2.7.4
 typing-extensions==3.10.0.2
 uritemplate==4.1.1
