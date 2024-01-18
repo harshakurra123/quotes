@@ -52,3 +52,4 @@ virtualenv==20.8.1
 social-auth-app-django~=3.1
 python-jose~=3.0
 python-dotenv~=0.9
+cryptography>=41.0.6 # not directly required, pinned by Snyk to avoid a vulnerability
